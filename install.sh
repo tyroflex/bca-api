@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Move to tmp
-cd /tmp || return
-
 # Install NodeJS 16
 curl -s https://deb.nodesource.com/setup_16.x | sudo bash
 sudo apt install nodejs -y
@@ -16,8 +13,14 @@ sudo apt-get update && sudo apt-get install -y ca-certificates fonts-liberation 
 
 # Install Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome*.deb
+sudo apt install ./google-chrome*.deb -y
 sudo apt-get install -f
 
 # Remove the Chrome Installer
 rm ./google-chrome*.deb
+
+# npm install
+npm install
+
+# Install screen
+sudo apt-get install screen
